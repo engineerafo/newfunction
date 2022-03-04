@@ -79,8 +79,10 @@ jobs:
       - name: Deploy to Azure Web App
         
         uses: Azure/functions-action@v1.4.4
+        id: deploy-to-function 
         with:
-          app-name: java-app 
+          app-name: 'Test-function12'
           
           package:  staging #'${{ github.workspace }}/target/*.jar'
           publish-profile: ${{ secrets.PUBLISH_PROFILE }}
+          scm-do-build-during-deployment: true
