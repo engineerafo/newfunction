@@ -53,12 +53,15 @@ jobs:
       - name: Step 5 - What is in the target folder?
         run:
           cd target && ls -a
+          
+      - name: Step 6 - Make a directory for the artifacts
+        run: mkdir staging && cp target/*.jar staging
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: staging #'${{ github.workspace }}/target/*.jar'
 
   #deploy:
   #  runs-on: ubuntu-latest
@@ -79,4 +82,4 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.PUBLISH_PROFILE }}
-          package:  '${{ github.workspace }}/target/*.jar'
+          package:  staging#'${{ github.workspace }}/target/*.jar'
