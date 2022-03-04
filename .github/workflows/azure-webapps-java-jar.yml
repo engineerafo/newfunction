@@ -80,7 +80,7 @@ jobs:
         id: deploy-to-webapp
         uses: Azure/functions-action@v1.1.5
         with:
-          app-name:  java-app #${{ env.AZURE_WEBAPP_NAME }}
+          app-name:  java-app ##'${{ env.AZURE_WEBAPP_NAME }}'
           
           package:  staging #'${{ github.workspace }}/target/*.jar'
           publish-profile: ${{ secrets.PUBLISH_PROFILE }}
