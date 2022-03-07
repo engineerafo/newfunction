@@ -81,7 +81,7 @@ jobs:
         uses: Azure/functions-action@v1.4.4
         id: deploy-to-function 
         with:
-          app-name: 'Test-function12'
+          app-name: 'Azure-Poc-Function'
           
           package:  staging #'${{ github.workspace }}/target/*.jar'
           publish-profile: ${{ secrets.PUBLISH_PROFILE }}
