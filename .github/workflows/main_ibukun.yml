@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ env.PACKAGE_DIRECTORY }}'
+          path: bulds/libs/
           
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
