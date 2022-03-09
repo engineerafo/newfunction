@@ -32,21 +32,12 @@ jobs:
           pushd './${{ env.PACKAGE_DIRECTORY }}'
           mvn clean package
           popd
-          tree
-          
-          
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
-        with:
-          name: java-app
-          path: ${{ env.PACKAGE_DIRECTORY }}'
-          
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
         with:
           app-name: 'Ibukun'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6DAE59E25A3445A4A26A3277AA254FCE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_39B2C350EFCB4BFA9B7D471CF03E7A62 }}
           package: '${{ env.PACKAGE_DIRECTORY }}'
           respect-pom-xml: true
