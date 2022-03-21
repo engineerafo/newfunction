@@ -14,15 +14,6 @@ env:
   PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
   JAVA_VERSION: '11' # set this to the java version to use
 
-name: Java CI with Gradle
-
-env:
-  AZURE_FUNCTIONAPP_NAME: function-poc1 # set this to your function app name on Azure
-  PACKAGE_DIRECTORY: '.' # set this to the directory which contains pom.xml file
-  JAVA_VERSION: '11' #
-
-on: push
-
 
 jobs:
   build:
