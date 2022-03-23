@@ -35,6 +35,12 @@ jobs:
         with:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'  
+          
+      - name: Build with Gradle
+        run: |
+          gradle azureFunctionsPackage
+          tree
+          
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
